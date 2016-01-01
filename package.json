@@ -7,14 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production node index.js",
     "build": "node build.js",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "postinstall": "node build.js"
   },
   "author": "Geries Handal",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
-  },
-  "devDependencies": {
+    "express": "^4.13.3",
     "handlebars": "^4.0.5",
     "helper-moment": "^0.1.0",
     "metalsmith": "^2.1.0",
