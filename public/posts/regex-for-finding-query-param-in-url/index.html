@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Regex for finding query param in url</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/app.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+</head>
+<body>
+
+<!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<header class="main-header post-head no-cover">
+ <nav class="main-nav">
+   <a class="button" href="/">Home</a>
+ </nav>
+
+
+</header>
+<div class="container post">
+  <div class="row">
+    <div class="twelve columns" >
+      <h2 class="post-title">Regex for finding query param in url</h2>
+      <p><strong>Note To Self</strong>: a JavaScript function for getting a value of a specific query param of an URL.</p>
+<pre><code>function getQueryParam (qpn, url) {
+    // qpn is short for queryParamName :)
+    var paramRegEx = new RegExp(qpn+&#39;=[^&amp;]*&#39;),
+        testResult = paramRegEx.exec(url);
+
+    // if there are many with same name, 
+    // then we return the first
+    if (testResult &amp;&amp; testResult.length &gt; 0) {
+        return testResult[0].split(&#39;=&#39;)[1];
+    }
+
+    return null;
+}
+</code></pre><p>Here is an exmaple jsfiddle of how to use it.</p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/gtothesquare/zkL6T/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
