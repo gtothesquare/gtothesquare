@@ -36,6 +36,7 @@ Metalsmith(__dirname)
   .use(layouts({
     'engine': 'handlebars',
     'directory': 'views',
+    'partials': 'views/partials'
 
 
   }))
