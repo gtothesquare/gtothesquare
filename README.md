@@ -18,8 +18,8 @@ layout and title.
 `$ npm run build`
 
 ##Run
-`$ npm start`
+`$ npm run dev`
 
 ##Production
 
-`$ npm run prod`
+`$ npm start`

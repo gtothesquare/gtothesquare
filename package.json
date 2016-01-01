@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
     "build": "node build.js",
-    "prod": "NODE_ENV=production node index.js"
+    "dev": "node index.js"
   },
   "author": "Geries Handal",
   "license": "ISC",
