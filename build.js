@@ -12,14 +12,13 @@ var drafts = require('metalsmith-drafts');
 Metalsmith(__dirname)
   //where the static files will be generated
   .destination('./public')
+  //for use of draft:true in the Yaml front matter
   .use(drafts())
   .use(registerHelpers({
     'directory':'views/helpers/'
   }))
+  //This plugin is used to generate a list of posts in cronological order
   .use(collections({
-    pages: {
-      pattern: 'content/pages/*.md'
-    },
     posts: {
      pattern: 'posts/*.md',
      sortBy: 'date',
@@ -28,9 +27,6 @@ Metalsmith(__dirname)
   }))
   //plugin for generating the html from markdown.
   .use(markdown({
-    'smartypants': true,
-    'smartLists': true,
-    'gfm': true,
     'tables': true
   }))
   //plugin to generate experts of each post
