@@ -6,12 +6,14 @@ var permalinks = require('metalsmith-permalinks');
 var excerpts = require('metalsmith-excerpts');
 var registerHelpers = require('metalsmith-register-helpers');
 var drafts = require('metalsmith-drafts');
+var fingerprint = require('metalsmith-fingerprint');
 
 //will convert everything in the folder
 // __dirname/src with md extension to html and copy the rest
 Metalsmith(__dirname)
   //where the static files will be generated
   .destination('./public')
+  .use(fingerprint({pattern:['css/*','js/*']}))
   //for use of draft:true in the Yaml front matter
   .use(drafts())
   .use(registerHelpers({

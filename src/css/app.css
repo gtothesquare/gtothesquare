@@ -103,3 +103,10 @@ http://hereisahand.com/adjust-ghost-cover-image-settings-casper/
     margin-bottom: 0;
     background: transparent;
 }
+
+.global-footer {
+    border-top: #e2edf2 1px solid;
+    padding: 20px;
+    font-size: 1.1rem;
+    background: #008cba;
+}
